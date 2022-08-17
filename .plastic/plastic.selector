@@ -1,0 +1,4 @@
+repository "Digimon3D@Digimon3D@cloud"
+  path "/"
+    br "/main"
+    co "/main"

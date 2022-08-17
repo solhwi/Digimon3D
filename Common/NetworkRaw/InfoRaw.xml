@@ -1,0 +1,64 @@
+<Infos>
+  <Class name="PlayerInfo">
+    <Variables>
+      <int name="RoomPlayerId"></int> 
+      <string name="PlayerNickname"></string>
+    </Variables>
+  </Class>
+
+  <Class name="MatchCompleteInfo">
+    <Variables>
+      <int name="MyPlayerId"></int>
+      <Dictionary key="int" value="PlayerInfo" name="RoomPlayers"></Dictionary>
+    </Variables>
+  </Class>
+
+  <Class name="CharacterSpawnInfo">
+    <Variables>
+      <int name="CharacterCid"></int>
+      <RoomCharacterTransformInfo name="CharacterTransform"></RoomCharacterTransformInfo>
+    </Variables>
+  </Class>
+    
+  <Class name="SDVector3D">
+    <Variables>
+      <float name="X"></float>
+      <float name="Y"></float>
+      <float name="Z"></float>
+    </Variables>
+  </Class>
+
+  <Class name="SDRotation3D">
+    <Variables>
+      <float name="X"></float>
+      <float name="Y"></float>
+      <float name="Z"></float>
+    </Variables>
+  </Class>
+
+  <Class name="RoomCharacterTransformInfo">
+    <Variables>
+      <SDVector3D name="Position"/>
+      <SDRotation3D name="Rotation"/>
+    </Variables>
+  </Class>
+
+  <Class name="BoundInfo">
+    <Variables>
+      <SDVector3D name="Center"/>
+      <SDVector3D name="Extent"/>
+    </Variables>
+  </Class>
+
+  <Class name="MapObjectInfo">
+    <Variables>
+      <int name="ObjId"/>
+      <int name="LayerType"/>
+      <int name="TagType"/>
+      <int name="ColliderType"/>
+      <BoundInfo name="Bounds"/>
+    </Variables>
+  </Class>
+</Infos>
+
+

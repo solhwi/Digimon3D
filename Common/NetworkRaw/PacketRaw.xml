@@ -1,0 +1,183 @@
+<Packets>
+  <Class name="Ping">
+
+    <Request>
+      <Variables>
+        <DateTime name="Time"></DateTime>
+      </Variables>
+    </Request>
+
+    <Response>
+      <Variables>
+        <DateTime name="Time"></DateTime>
+      </Variables>
+      <Errors>
+      </Errors>
+    </Response>
+    
+  </Class>
+
+  <Class name="GetServerPublicKey">
+
+    <Request>
+      <Variables>
+      </Variables>
+    </Request>
+
+    <Response>
+      <Variables>
+        <string name="PublicKey"></string>
+      </Variables>
+      <Errors>
+      </Errors>
+    </Response>
+
+  </Class>
+
+  <Class name="CreateAccount">
+
+    <Request>
+      <Variables>
+        <string name="Nickname"></string>
+        <string name="Password"></string>
+      </Variables>
+    </Request>
+
+    <Response>
+      <Variables>
+      </Variables>
+      <Errors>
+        <NicknameDuplicated />
+      </Errors>
+    </Response>
+
+  </Class>
+
+  <Class name="MatchCompleted">
+
+    <Notify>
+      <Variables>
+        <MatchCompleteInfo name="Info"></MatchCompleteInfo>
+      </Variables>
+    </Notify>
+    
+  </Class>
+
+  <Class name="MatchStart">
+
+    <Request>
+      <Variables>
+        <int name="RoomPlayerNum"></int>
+      </Variables>
+    </Request>
+
+    <Response>
+      <Variables>
+      </Variables>
+      <Errors>
+        <RoomPlayerNumInvalid />
+        <UnknownError />
+      </Errors>
+    </Response>
+    
+  </Class>
+
+  <Class name="MatchStop">
+
+    <Request>
+      <Variables>
+      </Variables>
+    </Request>
+
+    <Response>
+      <Variables>
+      </Variables>
+      <Errors>
+        <UnknownError />
+      </Errors>
+    </Response>
+    
+  </Class>
+
+  <Class name="Login">
+
+    <Request>
+      <Variables>
+        <string name="Nickname"></string>
+        <string name="Password"></string>
+      </Variables>
+    </Request>
+
+    <Response>
+      <Variables>
+        <bool name="LoginSuccess"></bool>
+      </Variables>
+      <Errors>
+        <NicknameNotFound />
+        <WrongPassword />
+      </Errors>
+    </Response>
+    
+  </Class>
+
+  <Class name="WaitingRoomCharTransSync">
+    <Report>
+      <Variables>
+        <SDVector3D name="Position" />
+        <SDRotation3D name="Rotation" />
+      </Variables>
+    </Report>
+
+    <Notify>
+      <Variables>
+        <Dictionary key="int" value="RoomCharacterTransformInfo" name="TransformInfos" />
+      </Variables>
+    </Notify>
+  </Class>
+
+  <Class name="WaitingRoomCharacterSpawn">
+    <Request>
+      <Variables>
+      </Variables>
+    </Request>
+
+    <Response>
+      <Variables>
+      </Variables>
+      <Errors>
+        <AlreadySpawned />
+      </Errors>
+    </Response>
+
+    <Notify>
+      <Variables>
+        <int name="OwnerPlayerId"/>
+        <CharacterSpawnInfo name="Info" />
+      </Variables>
+    </Notify>
+
+  </Class>
+
+  <Class name="GameRoomObjectInfos">
+    <Request>
+      <Variables>
+      </Variables>
+    </Request>
+
+    <Response>
+      <Variables>
+        <Dictionary key="int" value="MapObjectInfo" name="ObjectsInfos"/>
+      </Variables>
+      <Errors>
+      </Errors>
+    </Response>
+
+  </Class>
+
+  <CommonErrors>
+    <None />
+    <NotImplemented />
+  </CommonErrors>
+</Packets>
+
+
