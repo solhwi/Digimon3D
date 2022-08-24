@@ -28,7 +28,7 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
             ""id"": ""9c196553-59cb-4f69-9168-27ba8fdbdc05"",
             ""actions"": [
                 {
-                    ""name"": ""Shift"",
+                    ""name"": ""Q"",
                     ""type"": ""Button"",
                     ""id"": ""ee29b193-3f95-41d0-8e99-2c0bb9839067"",
                     ""expectedControlType"": ""Button"",
@@ -37,9 +37,18 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Space"",
+                    ""name"": ""W"",
                     ""type"": ""Button"",
                     ""id"": ""cffdaf45-1f9f-49d6-9b44-4a8803034373"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""E"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8c09038-af2e-4303-9201-6717610f1d69"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -55,15 +64,6 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""G"",
-                    ""type"": ""Button"",
-                    ""id"": ""f8c09038-af2e-4303-9201-6717610f1d69"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Tab"",
                     ""type"": ""Button"",
                     ""id"": ""6a122a40-54f7-4b92-923f-d064fc1ca5c3"",
@@ -71,15 +71,6 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""MoveSet"",
-                    ""type"": ""Value"",
-                    ""id"": ""cc93a851-7ea5-47bc-9408-e17cfd321b7a"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -97,33 +88,22 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5663abab-2224-4c6a-ad53-5d7575c32b67"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Space"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1db7ddb0-607e-4ee0-92a9-89d832b01fa4"",
-                    ""path"": ""<Keyboard>/g"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""G"",
+                    ""action"": ""W"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""b3e3110f-c5a7-4d81-aa9d-a8f0a92fb53a"",
-                    ""path"": ""<Keyboard>/shift"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Shift"",
+                    ""action"": ""Q"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -139,59 +119,15 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""a66f98ce-8aed-41e2-a613-065697914c4b"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""1db7ddb0-607e-4ee0-92a9-89d832b01fa4"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MoveSet"",
-                    ""isComposite"": true,
+                    ""action"": ""E"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""83656522-659e-4631-9f79-5b1706bd6dca"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveSet"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""34686aad-a9ed-4860-bed3-b2c4ea43b052"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveSet"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""8af86f81-e85b-4233-8371-4ed59d19b093"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveSet"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""8bbd7990-1fc1-48f9-a189-d59a896bb699"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MoveSet"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -841,12 +777,11 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
 }");
         // KeyBoard
         m_KeyBoard = asset.FindActionMap("KeyBoard", throwIfNotFound: true);
-        m_KeyBoard_Shift = m_KeyBoard.FindAction("Shift", throwIfNotFound: true);
-        m_KeyBoard_Space = m_KeyBoard.FindAction("Space", throwIfNotFound: true);
+        m_KeyBoard_Q = m_KeyBoard.FindAction("Q", throwIfNotFound: true);
+        m_KeyBoard_W = m_KeyBoard.FindAction("W", throwIfNotFound: true);
+        m_KeyBoard_E = m_KeyBoard.FindAction("E", throwIfNotFound: true);
         m_KeyBoard_R = m_KeyBoard.FindAction("R", throwIfNotFound: true);
-        m_KeyBoard_G = m_KeyBoard.FindAction("G", throwIfNotFound: true);
         m_KeyBoard_Tab = m_KeyBoard.FindAction("Tab", throwIfNotFound: true);
-        m_KeyBoard_MoveSet = m_KeyBoard.FindAction("MoveSet", throwIfNotFound: true);
         // Mouse
         m_Mouse = asset.FindActionMap("Mouse", throwIfNotFound: true);
         m_Mouse_MouseLeft = m_Mouse.FindAction("MouseLeft", throwIfNotFound: true);
@@ -925,22 +860,20 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
     // KeyBoard
     private readonly InputActionMap m_KeyBoard;
     private IKeyBoardActions m_KeyBoardActionsCallbackInterface;
-    private readonly InputAction m_KeyBoard_Shift;
-    private readonly InputAction m_KeyBoard_Space;
+    private readonly InputAction m_KeyBoard_Q;
+    private readonly InputAction m_KeyBoard_W;
+    private readonly InputAction m_KeyBoard_E;
     private readonly InputAction m_KeyBoard_R;
-    private readonly InputAction m_KeyBoard_G;
     private readonly InputAction m_KeyBoard_Tab;
-    private readonly InputAction m_KeyBoard_MoveSet;
     public struct KeyBoardActions
     {
         private @PlayerInputAction m_Wrapper;
         public KeyBoardActions(@PlayerInputAction wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Shift => m_Wrapper.m_KeyBoard_Shift;
-        public InputAction @Space => m_Wrapper.m_KeyBoard_Space;
+        public InputAction @Q => m_Wrapper.m_KeyBoard_Q;
+        public InputAction @W => m_Wrapper.m_KeyBoard_W;
+        public InputAction @E => m_Wrapper.m_KeyBoard_E;
         public InputAction @R => m_Wrapper.m_KeyBoard_R;
-        public InputAction @G => m_Wrapper.m_KeyBoard_G;
         public InputAction @Tab => m_Wrapper.m_KeyBoard_Tab;
-        public InputAction @MoveSet => m_Wrapper.m_KeyBoard_MoveSet;
         public InputActionMap Get() { return m_Wrapper.m_KeyBoard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -950,46 +883,40 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_KeyBoardActionsCallbackInterface != null)
             {
-                @Shift.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnShift;
-                @Shift.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnShift;
-                @Shift.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnShift;
-                @Space.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnSpace;
-                @Space.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnSpace;
-                @Space.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnSpace;
+                @Q.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnQ;
+                @Q.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnQ;
+                @Q.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnQ;
+                @W.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnW;
+                @W.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnW;
+                @W.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnW;
+                @E.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnE;
+                @E.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnE;
+                @E.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnE;
                 @R.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnR;
                 @R.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnR;
                 @R.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnR;
-                @G.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnG;
-                @G.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnG;
-                @G.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnG;
                 @Tab.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnTab;
                 @Tab.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnTab;
                 @Tab.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnTab;
-                @MoveSet.started -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnMoveSet;
-                @MoveSet.performed -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnMoveSet;
-                @MoveSet.canceled -= m_Wrapper.m_KeyBoardActionsCallbackInterface.OnMoveSet;
             }
             m_Wrapper.m_KeyBoardActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Shift.started += instance.OnShift;
-                @Shift.performed += instance.OnShift;
-                @Shift.canceled += instance.OnShift;
-                @Space.started += instance.OnSpace;
-                @Space.performed += instance.OnSpace;
-                @Space.canceled += instance.OnSpace;
+                @Q.started += instance.OnQ;
+                @Q.performed += instance.OnQ;
+                @Q.canceled += instance.OnQ;
+                @W.started += instance.OnW;
+                @W.performed += instance.OnW;
+                @W.canceled += instance.OnW;
+                @E.started += instance.OnE;
+                @E.performed += instance.OnE;
+                @E.canceled += instance.OnE;
                 @R.started += instance.OnR;
                 @R.performed += instance.OnR;
                 @R.canceled += instance.OnR;
-                @G.started += instance.OnG;
-                @G.performed += instance.OnG;
-                @G.canceled += instance.OnG;
                 @Tab.started += instance.OnTab;
                 @Tab.performed += instance.OnTab;
                 @Tab.canceled += instance.OnTab;
-                @MoveSet.started += instance.OnMoveSet;
-                @MoveSet.performed += instance.OnMoveSet;
-                @MoveSet.canceled += instance.OnMoveSet;
             }
         }
     }
@@ -1175,12 +1102,11 @@ public partial class @PlayerInputAction : IInputActionCollection2, IDisposable
     }
     public interface IKeyBoardActions
     {
-        void OnShift(InputAction.CallbackContext context);
-        void OnSpace(InputAction.CallbackContext context);
+        void OnQ(InputAction.CallbackContext context);
+        void OnW(InputAction.CallbackContext context);
+        void OnE(InputAction.CallbackContext context);
         void OnR(InputAction.CallbackContext context);
-        void OnG(InputAction.CallbackContext context);
         void OnTab(InputAction.CallbackContext context);
-        void OnMoveSet(InputAction.CallbackContext context);
     }
     public interface IMouseActions
     {

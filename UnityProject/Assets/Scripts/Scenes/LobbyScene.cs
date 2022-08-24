@@ -7,7 +7,6 @@ public class LobbyScene : GameSceneBase
 {
     protected override void OnEnable()
     {
-        UIMgr.Instance.OpenUI<LobbyWindow>();
     }
 
     protected override IEnumerator Start()
@@ -17,6 +16,5 @@ public class LobbyScene : GameSceneBase
 
     protected override void OnDisable()
     {
-       UIMgr.Instance.CloseUI<LobbyWindow>();
     }
 }

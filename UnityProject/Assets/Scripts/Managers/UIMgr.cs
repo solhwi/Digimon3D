@@ -101,7 +101,7 @@ public class UIMgr : SingletonBehaviour<UIMgr>, PlayerInputAction.IUIActions
         {
             loadingUIActions.Add(windowType, null);
 
-            ResourceMgr.Instance.InstantiateUI<T>((window) =>
+            ResourceMgr.Instance.Instantiate<T>((window) =>
             {
                 pool.PushObject(window);
 

@@ -26,10 +26,6 @@ public partial class CharacterStatTable : ScriptParser
 		public int Intelligence;
 		public int Health;
 		public int Mentality;
-		public int PhysicalAttack;
-		public int MagicalAttack;
-		public int HpMax;
-		public int MpMax;
 	}
 
 	public List<CharacterStat> CharacterStatList = new List<CharacterStat>();

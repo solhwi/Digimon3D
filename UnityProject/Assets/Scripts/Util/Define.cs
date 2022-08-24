@@ -14,46 +14,8 @@ namespace SDDefine
     {
         Idle = 0,
         Move = 1,
-        Run = 2,
-        Attack = 3,
-        Reload = 4,
-        Interact = 5,
+        Attack = 2,
         Max
-    }
-
-    /// <summary>
-    /// 해시 체킹하는 테이블 타입
-    /// </summary>
-    [Serializable]
-    public enum ENUM_INVALID_CHECKING_TABLE_TYPE
-    {
-        ItemTable = 0,
-        CharacterStatTable = 1,
-        CharacterAnimationTable = 2,
-        Max
-    }
-
-    /// <summary>
-    /// 아이템 타입
-    /// </summary>
-    /// 
-    [Serializable]
-    public enum ENUM_ITEM_TYPE
-    {
-        Equipment = 0,
-        Consumables = 1,
-        Weapon = 2,
-    }
-
-    /// <summary>
-    /// 아이템 장비 - 무기 타입 (PoolType에도 같은 이름이 존재해야 함)
-    /// </summary>
-    [Serializable]
-    public enum ENUM_EQUIPMENT_WEAPON
-    {
-        Null = 0,
-        Rifle = 1,
-        Shotgun = 2,
     }
 
     /// <summary>
@@ -62,7 +24,7 @@ namespace SDDefine
     [Serializable]
     public enum ENUM_MAP_TYPE
     {
-        DummyMap = 0,
+        FileIsland = 0,
     }
 
     /// <summary>
@@ -98,9 +60,6 @@ namespace SDDefine
     public enum ENUM_TAG_TYPE
     {
         Untagged = 0,
-        Interactable = 1,
-        Spawnable = 2,
-        Playable = 3
     }
 
 
@@ -138,30 +97,6 @@ namespace SDDefine
         Lobby = 2,
         WaitingRoom = 3,
         Battle = 4,
-        Setting = 5,
-    }
-
-    /// <summary>
-    /// 캐릭터 애니메이션 클립
-    /// </summary>
-    [System.Serializable]
-    public enum ENUM_CHARACTER_ANIMATION_CLIP
-    {
-        Idle = 0,
-        IdleFire = 1,
-        IdleReload = 2,
-        IdleMenu = 3,
-        RunB = 4,
-        RunF = 5,
-        RunL = 6,
-        RunR = 7,
-        WalkB = 8,
-        WalkF = 9,
-        WalkL = 10,
-        WalkR = 11,
-        RunFire = 12,
-        Sprint = 13,
-        Max
     }
 
     /// <summary>
@@ -175,10 +110,6 @@ namespace SDDefine
         INTELLIGENCE = 1, // 지능
         HEALTH = 2, // 체력
         MENTALITY = 3,  // 정신력
-        PHYSICAL_ATTACK = 4, // 물리 공격력
-        MAGICAL_ATTACK = 5, // 마법 공격력
-        HP_MAX = 6, // HP MAX
-        MP_MAX = 7, //  MP MAX
         OVERFLOW
     }
 
@@ -189,7 +120,7 @@ namespace SDDefine
     [System.Serializable]
     public enum ENUM_CHARACTER
     {
-        Solider = 0,
+        AGUMON = 0,
         None,
     }
 

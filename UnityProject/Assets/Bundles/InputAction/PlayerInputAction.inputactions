@@ -1,12 +1,12 @@
 {
-    "name": "PlayerInputActions",
+    "name": "PlayerInputAction",
     "maps": [
         {
             "name": "KeyBoard",
             "id": "9c196553-59cb-4f69-9168-27ba8fdbdc05",
             "actions": [
                 {
-                    "name": "Shift",
+                    "name": "Q",
                     "type": "Button",
                     "id": "ee29b193-3f95-41d0-8e99-2c0bb9839067",
                     "expectedControlType": "Button",
@@ -15,9 +15,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Space",
+                    "name": "W",
                     "type": "Button",
                     "id": "cffdaf45-1f9f-49d6-9b44-4a8803034373",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "E",
+                    "type": "Button",
+                    "id": "f8c09038-af2e-4303-9201-6717610f1d69",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -33,15 +42,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "G",
-                    "type": "Button",
-                    "id": "f8c09038-af2e-4303-9201-6717610f1d69",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Tab",
                     "type": "Button",
                     "id": "6a122a40-54f7-4b92-923f-d064fc1ca5c3",
@@ -49,15 +49,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "MoveSet",
-                    "type": "Value",
-                    "id": "cc93a851-7ea5-47bc-9408-e17cfd321b7a",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -75,33 +66,22 @@
                 {
                     "name": "",
                     "id": "5663abab-2224-4c6a-ad53-5d7575c32b67",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Space",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1db7ddb0-607e-4ee0-92a9-89d832b01fa4",
-                    "path": "<Keyboard>/g",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "G",
+                    "action": "W",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "b3e3110f-c5a7-4d81-aa9d-a8f0a92fb53a",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shift",
+                    "action": "Q",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -117,59 +97,15 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "WASD",
-                    "id": "a66f98ce-8aed-41e2-a613-065697914c4b",
-                    "path": "2DVector",
+                    "name": "",
+                    "id": "1db7ddb0-607e-4ee0-92a9-89d832b01fa4",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MoveSet",
-                    "isComposite": true,
+                    "action": "E",
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "83656522-659e-4631-9f79-5b1706bd6dca",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveSet",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "34686aad-a9ed-4860-bed3-b2c4ea43b052",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveSet",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "8af86f81-e85b-4233-8371-4ed59d19b093",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveSet",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "8bbd7990-1fc1-48f9-a189-d59a896bb699",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MoveSet",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         },

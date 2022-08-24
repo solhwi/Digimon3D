@@ -184,41 +184,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - UnityAsset
-  - m_GUID: 577fa6de36d1f0d4498bdcfad550bdc6
-    m_Address: Assets/Bundles/Datas/Parser/ItemTable.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UnityAsset
-  - m_GUID: a386bde633a3116498375cb6b7ff972e
-    m_Address: Assets/Bundles/Datas/Parser/CharacterAnimationTable.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UnityAsset
-  - m_GUID: 15bf909e6848844439180e39a93d9ff9
-    m_Address: Assets/Bundles/Datas/Parser/MapPathTable.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UnityAsset
   - m_GUID: 2d8ccd4284fcf684ca6c7b02b750671d
     m_Address: Assets/Bundles/Prefabs/UI/TOP/LobbyWindow.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Prefab
-  - m_GUID: 4fe9596c3c787ab45a79dd3848dea35d
-    m_Address: Assets/Scripts/TempFolder/MoveAnimController.controller
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: db4b87b04552fbb4fad440c4b13314b1
-    m_Address: Assets/Scripts/TempFolder/BackCubeAnim.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: cb29f51837587c340adfade8eec1003a
-    m_Address: Assets/Scripts/TempFolder/GoCubeAnim.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
   - m_GUID: 67b277cf30a65ef4e9b45bd261e8571a
     m_Address: Assets/Bundles/Prefabs/UI/TOP/SystemPopup.prefab
     m_ReadOnly: 0
@@ -657,11 +627,6 @@ MonoBehaviour:
     - UnityAsset
   - m_GUID: f0e930b838685904183661532546d0ef
     m_Address: Assets/Bundles/Datas/CustomParser/MapData.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UnityAsset
-  - m_GUID: a4a26f7fe0efb5b4b945cc932637f153
-    m_Address: Assets/Bundles/Datas/Parser/ItemSequenceTable.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - UnityAsset

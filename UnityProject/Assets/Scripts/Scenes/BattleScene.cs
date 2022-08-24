@@ -8,21 +8,8 @@ namespace Solhwi
 {
     public class BattleScene : GameSceneBase
     {
-        public override bool IsSceneLoaded
-        {
-            get
-            {
-                return ObjectPoolMgr.Instance.IsLoadDone;
-            }
-        }
-
         protected override void OnEnable()
         {
-            singletonDictionary = new SingletonDictionary()
-            {
-                { SingletonID.ObjectPoolMgr, ObjectPoolMgr.Instance},
-            };
-
             Camera.main.gameObject.SetActive(false); // 임시 처리요
         }
 
@@ -30,15 +17,10 @@ namespace Solhwi
         {
             while(!IsSceneLoaded)
                 yield return null;
-
-            MapLoader.Instance.LoadMap(ENUM_MAP_TYPE.DummyMap);
-
-            PlayerCharacter.Instance.Spawn();
         }
 
         protected override void OnDisable()
         {
-            MapLoader.Instance.UnloadMap();
         }
     }
 

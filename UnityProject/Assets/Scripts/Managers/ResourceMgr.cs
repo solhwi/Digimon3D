@@ -74,7 +74,7 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
     }
 #endif
 
-    public AsyncOperationHandle<GameObject> InstantiateUI<T>(Action<T> PushObj = null) where T : UIWindow
+    public AsyncOperationHandle<GameObject> Instantiate<T>(Action<T> PushObj = null) where T : MonoBehaviour
     {
         string path = AttributeUtil.GetResourcePath<T>();
 
@@ -141,7 +141,7 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
 
     public void LoadMap(string mapPath, Action OnLoaded)
     {
-        this.StartUpdateCoroutine(CoLoadMap(mapPath, OnLoaded));
+        StartCoroutine(CoLoadMap(mapPath, OnLoaded));
     }
     
     private IEnumerator CoLoadMap(string mapPath, Action OnLoaded)

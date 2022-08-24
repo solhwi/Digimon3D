@@ -9,13 +9,11 @@ using UnityEngine.InputSystem.Controls;
 
 public enum ENUM_KEYBOARD_INPUT
 {
-    MoveSet,
-    Shift,
-    Space,
+    Q,
+    W,
+    E,
     R,
-    G,
     Tab,
-
     MAX
 }
 
@@ -90,14 +88,6 @@ public sealed class InputMgr : Singleton<InputMgr>
             float y = Mouse.current.delta.y.ReadValue();
 
             return new Vector2(x, y);
-        }
-    }
-
-    public static Vector2 MoveSetVector2D
-    {
-        get
-        {
-            return Instance.KeyboardMap.FindAction(ENUM_KEYBOARD_INPUT.MoveSet.ToString()).ReadValue<Vector2>();
         }
     }
 

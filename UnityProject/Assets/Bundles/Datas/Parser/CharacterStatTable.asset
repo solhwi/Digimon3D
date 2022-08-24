@@ -18,10 +18,6 @@ MonoBehaviour:
     Intelligence: 30
     Health: 150
     Mentality: 100
-    PhysicalAttack: 250
-    MagicalAttack: 20
-    HpMax: 500
-    MpMax: 300
   CharacterStatDictionary:
     m_keys: 00000000
     m_values:
@@ -30,7 +26,3 @@ MonoBehaviour:
       Intelligence: 30
       Health: 150
       Mentality: 100
-      PhysicalAttack: 250
-      MagicalAttack: 20
-      HpMax: 500
-      MpMax: 300

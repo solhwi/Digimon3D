@@ -17,7 +17,7 @@ public class SceneMgr : SingletonBehaviour<SceneMgr>
     public void LoadScene(GameScene sceneEnum, Action<float> OnSceneLoading = null, Action OnSceneLoaded = null)
     {
         SceneManager.sceneLoaded += LoadSceneEnd;
-        this.StartUpdateCoroutine(OnLoadSceneCoroutine(sceneEnum, OnSceneLoading, OnSceneLoaded));
+        StartCoroutine(OnLoadSceneCoroutine(sceneEnum, OnSceneLoading, OnSceneLoaded));
     }
 
     private IEnumerator OnLoadSceneCoroutine(GameScene sceneEnum, Action<float> OnSceneLoading = null, Action OnSceneLoaded = null)

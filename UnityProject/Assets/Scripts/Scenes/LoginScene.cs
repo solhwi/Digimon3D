@@ -6,13 +6,6 @@ public class LoginScene : GameSceneBase
 {
     protected override void OnEnable()
     {
-        //singletonDictionary = new SingletonDictionary()
-        //{
-        //    { SingletonID.SDNetwork, SDNetwork.Instance }
-        //};
-
-        UIMgr.Instance.OpenUI<LoginWindow>();
-
         Camera.main.gameObject.SetActive(false); // 임시 처리요
     }
 
@@ -23,8 +16,6 @@ public class LoginScene : GameSceneBase
 
     protected override void OnDisable()
     {
-        UIMgr.Instance.CloseUI<LoginWindow>();
-    }
 
-    
+    }
 }
