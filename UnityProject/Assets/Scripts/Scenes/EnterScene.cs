@@ -8,7 +8,7 @@ namespace Solhwi
 {
     public class EnterScene : GameSceneBase
     { 
-        public bool IsSceneEnded
+        public override bool IsSceneLoaded
         {
             get
             {
@@ -29,14 +29,12 @@ namespace Solhwi
 
         protected override IEnumerator Start()
         {
-            while (!IsSceneEnded)
+            while (!IsSceneLoaded)
             {
                 yield return null;
             }
 
-            SceneMgr.Instance.LoadScene(GameScene.Login);
+            SceneMgr.Instance.LoadScene(GameScene.Battle);
         }
     }
-
-   
 }

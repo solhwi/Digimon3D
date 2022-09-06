@@ -10,7 +10,7 @@ namespace Solhwi
     {
         protected override void OnEnable()
         {
-            Camera.main.gameObject.SetActive(false); // 임시 처리요
+            MapMgr.Instance.LoadMap(ENUM_MAP_TYPE.FileIsland);
         }
 
         protected override IEnumerator Start()

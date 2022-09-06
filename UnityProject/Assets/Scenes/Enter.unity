@@ -248,7 +248,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singletonDictionary:
     m_keys: 
-    m_values: []
 --- !u!4 &757174037
 Transform:
   m_ObjectHideFlags: 0

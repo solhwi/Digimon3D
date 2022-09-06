@@ -1104,7 +1104,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3442027500984394171}
   - component: {fileID: 3442027500984303068}
-  - component: {fileID: 3442027500984302880}
   - component: {fileID: 4817566606566901400}
   m_Layer: 6
   m_Name: Solider
@@ -1160,25 +1159,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 3442027500989575351}
   m_Enabled: 1
---- !u!114 &3442027500984302880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3442027500984303067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceef66e54c3a9524287d3a4c236158f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerType: 6
-  tagType: 3
-  colliderType: 0
-  objGuid: 0
-  headTr: {fileID: 3442027500984394113}
-  weaponFireTr: {fileID: 3442027502261740865}
-  weaponMesh: {fileID: 8548069671121847650}
 --- !u!136 &4817566606566901400
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -17,11 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 05001f1ad23722e4f9089e75d53ccefd
   m_SerializeEntries:
-  - m_GUID: d7dd99f9b04e42742a3050f6ab8eee12
-    m_Address: Assets/Bundles/Prefabs/UI/MIDDLE/HPBar.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
   - m_GUID: 6224bc0a21c1046ceb676a4246d50da8
     m_Address: Assets/Bundles/Animations/Solider/RunFireSMG.anim
     m_ReadOnly: 0
@@ -102,11 +97,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Animation
-  - m_GUID: a7aa2ec825e26004a9fa164758b6bffb
-    m_Address: Assets/Bundles/Prefabs/UI/TOP/LoginWindow.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
   - m_GUID: cd278b6c8cb17cc4e83e4b16775e2c20
     m_Address: Assets/Bundles/Datas/Pool/PoolComponent.asset
     m_ReadOnly: 0
@@ -165,15 +155,10 @@ MonoBehaviour:
     m_SerializedLabels:
     - Prefab
   - m_GUID: d857763e1758f6b46b2efe0515ca5167
-    m_Address: Assets/Bundles/Scenes/Stage/DummyMap.unity
+    m_Address: Assets/Bundles/Scenes/Stage/FileIsland.unity
     m_ReadOnly: 0
     m_SerializedLabels:
     - Scene
-  - m_GUID: 52dd57455245cc04fb459d1402c0d9f7
-    m_Address: Assets/Bundles/Prefabs/UI/MIDDLE/InteractionUI.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
   - m_GUID: 1c11212dc6e2baf49a678e8550f59c16
     m_Address: Assets/Bundles/Prefabs/Item/TestItem.prefab
     m_ReadOnly: 0
@@ -184,18 +169,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - UnityAsset
-  - m_GUID: 2d8ccd4284fcf684ca6c7b02b750671d
-    m_Address: Assets/Bundles/Prefabs/UI/TOP/LobbyWindow.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
   - m_GUID: 67b277cf30a65ef4e9b45bd261e8571a
     m_Address: Assets/Bundles/Prefabs/UI/TOP/SystemPopup.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
-  - m_GUID: 12d9330637a209744b04e27cc89744df
-    m_Address: Assets/Bundles/Prefabs/UI/TOP/LoadingindicatiorUI.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Prefab
@@ -622,11 +597,6 @@ MonoBehaviour:
     - UnityAsset
   - m_GUID: 00000000000000003000000000000000
     m_Address: ProjectSettings/TagManager.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - UnityAsset
-  - m_GUID: f0e930b838685904183661532546d0ef
-    m_Address: Assets/Bundles/Datas/CustomParser/MapData.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - UnityAsset

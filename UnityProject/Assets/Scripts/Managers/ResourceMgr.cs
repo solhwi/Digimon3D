@@ -35,7 +35,9 @@ public class ResourceAttribute : Attribute
 
 public class ResourceMgr : SingletonBehaviour<ResourceMgr>
 {
+#if !UNITY_EDITOR
     private int loadedAssetCount = 0;
+#endif
     public override bool IsLoadDone
     {
         get
@@ -139,8 +141,9 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
         return Instantiate(obj);
     }
 
-    public void LoadMap(string mapPath, Action OnLoaded)
+    public void LoadMap(ENUM_MAP_TYPE mapType, Action OnLoaded = null)
     {
+        string mapPath = $"Assets/Bundles/Scenes/Stage/{mapType}.unity";
         StartCoroutine(CoLoadMap(mapPath, OnLoaded));
     }
     
