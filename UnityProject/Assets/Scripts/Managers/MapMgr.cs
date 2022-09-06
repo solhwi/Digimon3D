@@ -33,15 +33,17 @@ public class MapMgr : SingletonBehaviour<MapMgr>
 
 	public void LoadMap(ENUM_MAP_TYPE mapType)
 	{
-		ResourceMgr.Instance.LoadMap(mapType, SearchMapRoot);
+		ResourceMgr.Instance.LoadMap(mapType, SetMapRoot);
 	}
 
-	private void SearchMapRoot()
+	private void SetMapRoot()
 	{
 		currMapRoot = FindObjectOfType<MapRoot>();
-		currMapRoot.Init();
+		if (currMapRoot == null)
+			return;
 
 		currMapRoot.transform.SetParent(transform, true);
+		currMapRoot.Init();
 
 		isMapLoaded = true;
 	}
