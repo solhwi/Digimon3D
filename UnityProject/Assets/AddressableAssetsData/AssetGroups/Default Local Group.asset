@@ -17,86 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 05001f1ad23722e4f9089e75d53ccefd
   m_SerializeEntries:
-  - m_GUID: 6224bc0a21c1046ceb676a4246d50da8
-    m_Address: Assets/Bundles/Animations/Solider/RunFireSMG.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: 268781a61383b42a98eeda538dfa52e9
-    m_Address: Assets/Bundles/Animations/Solider/RunL.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: f65e8694646404294b2de66b5827d6e5
-    m_Address: Assets/Bundles/Animations/Solider/RunR.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: 52726528637b14f8586ef4583b34b790
-    m_Address: Assets/Bundles/Animations/Solider/SprintF.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: 12f83840bf513493c819c3e6ceebb013
-    m_Address: Assets/Bundles/Animations/Solider/WalkB.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: 73098e15972fa4a23b0562e6f1262161
-    m_Address: Assets/Bundles/Animations/Solider/WalkF.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: e011f1bb45ed34db296d1bd5e3d7e2ce
-    m_Address: Assets/Bundles/Animations/Solider/WalkL.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: b3bfe99b5c470442e95763e6be7b1a5a
-    m_Address: Assets/Bundles/Animations/Solider/WalkR.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: df787a42d52d64ff4b908f7a344d499e
-    m_Address: Assets/Bundles/Animations/Solider/Idle.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: 9268e98fb6cf94b7680e3c72e7e3f7af
-    m_Address: Assets/Bundles/Animations/Solider/IdleFireSMG.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: 490e214aa41ee4896b152dcb101f1b55
-    m_Address: Assets/Bundles/Animations/Solider/IdleReloadSMG.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: 6aba53e6dc3a949f78d860f083c0a174
-    m_Address: Assets/Bundles/Animations/Solider/MenuIdle.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: 777be73b9098940d086517b3fe6beb8a
-    m_Address: Assets/Bundles/Animations/Solider/RunB.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: 185c4b4f1e1c1441d920959e7dee49a5
-    m_Address: Assets/Bundles/Animations/Solider/RunF.anim
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
-  - m_GUID: b7e5634eacde2694db4f341c154eb532
-    m_Address: Assets/Bundles/Prefabs/Character/Solider.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
-  - m_GUID: ae803a4302695ca46adf0e6b024810ba
-    m_Address: Assets/Bundles/Animations/Solider/Solider.controller
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Animation
   - m_GUID: cd278b6c8cb17cc4e83e4b16775e2c20
     m_Address: Assets/Bundles/Datas/Pool/PoolComponent.asset
     m_ReadOnly: 0
@@ -107,18 +27,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Prefab
-  - m_GUID: eec3da01a68107e41b8c7b824ad72f60
-    m_Address: Assets/Bundles/Prefabs/Character/Bullet.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
   - m_GUID: 074073843b96e6e4bbe9e75065e20eca
     m_Address: Assets/Bundles/Prefabs/Environment/Skybox.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
-  - m_GUID: 96e82463b7d46344295e9a965beb41f9
-    m_Address: Assets/Bundles/Models/Barrel/Barrel.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Prefab
@@ -159,11 +69,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Scene
-  - m_GUID: 1c11212dc6e2baf49a678e8550f59c16
-    m_Address: Assets/Bundles/Prefabs/Item/TestItem.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
   - m_GUID: a881da1cde5a5404e94ff8c32a32d384
     m_Address: Assets/Bundles/Datas/Parser/CharacterStatTable.asset
     m_ReadOnly: 0
@@ -210,16 +115,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - UnityAsset
-  - m_GUID: 53a6845cb98b7a1468412ff5e008a71d
-    m_Address: Assets/Bundles/Prefabs/Item/Rifle.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
-  - m_GUID: e541ca7f1bd74ce4eb2261d3b9efc7d9
-    m_Address: Assets/Bundles/Prefabs/Item/Shotgun.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
   - m_GUID: 134c3b7b869465241a31ac99f6ad3e77
     m_Address: Assets/Bundles/Materials/Custom/SkyboxProcedural.mat
     m_ReadOnly: 0
@@ -260,11 +155,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
-  - m_GUID: d0168d139a4e746afabad4e5096c78a7
-    m_Address: Assets/Bundles/Models/Bullet/Materials/Bullet_UV2.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
   - m_GUID: 66bb025986bd66c479f0fe7e007798b0
     m_Address: Assets/Bundles/Materials/YughuesFreeMetalMaterials/Materials/M_YFMM_25.mat
     m_ReadOnly: 0
@@ -280,18 +170,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
-  - m_GUID: 0628f850633764dfe82afdc4a92b3cce
-    m_Address: Assets/Bundles/Models/Weapons/Materials/m_rifle02.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
   - m_GUID: d690ce46b58f6704caed1ffbff694459
     m_Address: Assets/Bundles/Materials/YughuesFreeMetalMaterials/Materials/M_YFMM_21.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
-  - m_GUID: d409cb4178b291a48bf123e918dc1775
-    m_Address: Assets/Bundles/Materials/BlobShadow.mat
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
@@ -300,18 +180,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
-  - m_GUID: 8b486f856f0491e40977f08e818e3497
-    m_Address: Assets/Bundles/Models/Barrel/Materials/Barrel-Barrel 1.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
   - m_GUID: 6c196c7188cb7314cb4fc62a41ccad77
     m_Address: Assets/Bundles/Materials/YughuesFreeMetalMaterials/Materials/M_YFMM_44.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
-  - m_GUID: 1b7c6da276d564d30b27a2b8d1b9b5dd
-    m_Address: Assets/Bundles/Models/Player/Material/m_SkinSlade.mat
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
@@ -385,11 +255,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
-  - m_GUID: 941cd838b626447479432576a7b1de94
-    m_Address: Assets/Bundles/Models/Weapons/Materials/m_monte_smg_sho.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
   - m_GUID: 7a453bae213a8b04b9e9f8adb81cc8be
     m_Address: Assets/Bundles/Materials/YughuesFreeMetalMaterials/Materials/M_YFMM_47.mat
     m_ReadOnly: 0
@@ -445,11 +310,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
-  - m_GUID: 49fe7b19c37f945b49102a71d5a4d59b
-    m_Address: Assets/Bundles/Models/Weapons/Materials/m_shotguns01.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
   - m_GUID: 7aff8cf784c3c21428b4887833479217
     m_Address: Assets/Bundles/Materials/YughuesFreeMetalMaterials/Demo/M_DEMO_YFMM_Ground.mat
     m_ReadOnly: 0
@@ -482,11 +342,6 @@ MonoBehaviour:
     - Material
   - m_GUID: a6d73f9e47bd28d438e0eaa89328614f
     m_Address: Assets/Bundles/Materials/YughuesFreeMetalMaterials/Materials/M_YFMM_30.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
-  - m_GUID: aec187e4dc149164983cd07bb5dc4296
-    m_Address: Assets/Bundles/Models/Barrel/Materials/Barrel-Barrel 2.mat
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
@@ -545,11 +400,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
-  - m_GUID: 7e54e52b5d24943bf8fcaabd7cda3ceb
-    m_Address: Assets/Bundles/Models/Weapons/Materials/m_rifle01.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
   - m_GUID: d6e7475a477721949a7fa2353ffb7e32
     m_Address: Assets/Bundles/Materials/YughuesFreeMetalMaterials/Materials/M_YFMM_12.mat
     m_ReadOnly: 0
@@ -562,11 +412,6 @@ MonoBehaviour:
     - Material
   - m_GUID: 6bded294da3a9cf47bdb6b9259f86b49
     m_Address: Assets/Bundles/Materials/YughuesFreeMetalMaterials/Materials/M_YFMM_14.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
-  - m_GUID: 32373cb5a2b659c4c8b6f2919660727c
-    m_Address: Assets/Bundles/Models/Barrel/Materials/Barrel-Barrel.mat
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
