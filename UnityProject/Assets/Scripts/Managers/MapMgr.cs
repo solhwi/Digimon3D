@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,16 +22,6 @@ public class MapMgr : SingletonBehaviour<MapMgr>
 
 	private bool isMapLoaded = false;
 
-	protected override void OnInit()
-	{
-		base.OnInit();
-	}
-
-	protected override void OnClear()
-	{
-		base.OnClear();
-	}
-
 	public void LoadMap(ENUM_MAP_TYPE mapType)
 	{
 		ResourceMgr.Instance.LoadMap(mapType, SetMapRoot);
@@ -45,6 +36,15 @@ public class MapMgr : SingletonBehaviour<MapMgr>
 		currMapRoot.transform.SetParent(transform, true);
 		currMapRoot.Init();
 
-		isMapLoaded = true;
+		MapPlayerSpawnArea playerSpawnArea = currMapRoot.GetMapComponent<MapPlayerSpawnArea>();
+		Vector3 playerSpawnPos = playerSpawnArea.GetSpawnPos();
+
+		var data = new SpawnData()
+		{
+			digimonType = SDDefine.ENUM_DIGIMON_TYPE.Agumon,
+			spawnPos = playerSpawnPos
+		};
+
+		SpawnMgr.Instance.Spawn(data);
 	}
 }

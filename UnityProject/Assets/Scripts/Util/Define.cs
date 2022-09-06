@@ -1,30 +1,18 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 namespace SDDefine
 {
-    /// <summary>
-    /// 캐릭터 스테이트는 입력과 관계없이 캐릭터가 지니는 상태
-    /// </summary>
-    /// 
-    [Serializable]
-    public enum CharacterState
+	/// <summary>
+	/// 캐릭터 스테이트는 입력과 관계없이 캐릭터가 지니는 상태
+	/// </summary>
+	/// 
+	[Serializable]
+    public enum ObjectState
     {
         Idle = 0,
         Move = 1,
         Attack = 2,
         Max
-    }
-
-    /// <summary>
-    /// 맵 타입
-    /// </summary>
-    [Serializable]
-    public enum ENUM_MAP_TYPE
-    {
-        FileIsland = 0,
     }
 
     /// <summary>
@@ -50,6 +38,12 @@ namespace SDDefine
         /// </summary>
         ///
         Player = 6, // 유저
+        Monster = 7, // 몬스터
+
+        PlayerSpawn = 8,
+        MonsterSpawn = 9,
+
+        DarkTower = 10, // 어둠의 탑
     }
 
     /// <summary>
@@ -61,7 +55,6 @@ namespace SDDefine
     {
         Untagged = 0,
     }
-
 
     /// <summary>
     /// 콜라이더 종류
@@ -82,9 +75,6 @@ namespace SDDefine
 
     /// <summary>
     /// Enter : 초기화 및 번들 로드 시기
-    /// Login : 로그인 화면
-    /// Lobby : 로비 (혼자 있는)
-    /// WaitingRoom : 대기실 (유저와 함께 있는)
     /// Battle : 전투
     /// </summary>
     /// 
@@ -93,9 +83,6 @@ namespace SDDefine
     public enum GameScene
     {
         Enter = 0,
-        Login = 1,
-        Lobby = 2,
-        WaitingRoom = 3,
         Battle = 4,
     }
 
@@ -118,9 +105,9 @@ namespace SDDefine
     /// </summary>
 
     [System.Serializable]
-    public enum ENUM_CHARACTER
+    public enum ENUM_DIGIMON_TYPE
     {
-        AGUMON = 0,
+        Agumon = 0,
         None,
     }
 

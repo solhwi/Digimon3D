@@ -97,6 +97,11 @@ public class CollisionObject : MonoBehaviour
         return col;
     }
 
+    public void ReplaceObject(Vector3 pos)
+	{
+
+	}
+
     protected virtual void OnCollisionEnter(Collision collision)
     {
 

@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 282904927}
   - component: {fileID: 282904926}
   - component: {fileID: 282904925}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Wall_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 315366553}
-  m_Layer: 0
+  - component: {fileID: 315366554}
+  m_Layer: 9
   m_Name: Monster
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -335,6 +336,18 @@ Transform:
   m_Father: {fileID: 967480370}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0.5, z: 0}
+--- !u!114 &315366554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315366552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96156e0a9716f25409549cea6530bc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &581581319
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +357,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 581581320}
-  m_Layer: 0
+  - component: {fileID: 581581321}
+  m_Layer: 9
   m_Name: Monster_3
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -366,6 +380,18 @@ Transform:
   m_Father: {fileID: 967480370}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &581581321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581581319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96156e0a9716f25409549cea6530bc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &671780275
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +404,8 @@ GameObject:
   - component: {fileID: 671780279}
   - component: {fileID: 671780278}
   - component: {fileID: 671780277}
-  m_Layer: 0
+  - component: {fileID: 671780280}
+  m_Layer: 10
   m_Name: DarkTower
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -463,6 +490,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671780275}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &671780280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671780275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620cfd889b1ca2b46959fe91f1f72b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &700015057
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +514,7 @@ GameObject:
   - component: {fileID: 700015061}
   - component: {fileID: 700015060}
   - component: {fileID: 700015059}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Wall_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 868312051}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerSpawnArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,7 +735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 967480370}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MonsterSpawnArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1053962942}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +805,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1086079428}
-  m_Layer: 0
+  - component: {fileID: 1086079429}
+  m_Layer: 8
   m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -788,6 +828,18 @@ Transform:
   m_Father: {fileID: 868312051}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1086079429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086079427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef63fdae0fa7c2342ae77df56f6dce5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1137531028
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +849,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1137531029}
-  m_Layer: 0
+  - component: {fileID: 1137531030}
+  m_Layer: 8
   m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -819,6 +872,18 @@ Transform:
   m_Father: {fileID: 868312051}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1137531030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137531028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef63fdae0fa7c2342ae77df56f6dce5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1317676195
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +893,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1317676196}
-  m_Layer: 0
+  - component: {fileID: 1317676197}
+  m_Layer: 9
   m_Name: Monster_2
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -850,6 +916,18 @@ Transform:
   m_Father: {fileID: 967480370}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1317676197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317676195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96156e0a9716f25409549cea6530bc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1543994207
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,7 +940,7 @@ GameObject:
   - component: {fileID: 1543994211}
   - component: {fileID: 1543994210}
   - component: {fileID: 1543994209}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -956,7 +1034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588028072}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DarkTowers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,7 +1114,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1987333553}
-  m_Layer: 0
+  - component: {fileID: 1987333554}
+  m_Layer: 9
   m_Name: Monster_1
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1058,6 +1137,18 @@ Transform:
   m_Father: {fileID: 967480370}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1987333554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987333552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96156e0a9716f25409549cea6530bc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2005558546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +1161,7 @@ GameObject:
   - component: {fileID: 2005558550}
   - component: {fileID: 2005558549}
   - component: {fileID: 2005558548}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Wall_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1164,7 +1255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2092405482}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1255,7 +1346,6 @@ GameObject:
   - component: {fileID: 1484353366004325830}
   - component: {fileID: 1484353366004325825}
   - component: {fileID: 1484353366004325824}
-  - component: {fileID: 1484353366004325832}
   m_Layer: 3
   m_Name: Wall
   m_TagString: Untagged
@@ -1286,19 +1376,3 @@ Transform:
   m_Father: {fileID: 1053962942}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1484353366004325832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1484353366004325827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eaa8d9b13c6b43418be43fedd7664be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerType: 3
-  tagType: 0
-  colliderType: 0
-  objGuid: 0

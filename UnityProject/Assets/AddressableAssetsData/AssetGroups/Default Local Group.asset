@@ -115,6 +115,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - UnityAsset
+  - m_GUID: 0d66ae87bd6c67840b6aa78ab85eb572
+    m_Address: Assets/Bundles/Prefabs/Character/Papimon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 5e6cc59913014e54288863e29f02b53b
+    m_Address: Assets/Bundles/Prefabs/Digimon/Agumon.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
   - m_GUID: 134c3b7b869465241a31ac99f6ad3e77
     m_Address: Assets/Bundles/Materials/Custom/SkyboxProcedural.mat
     m_ReadOnly: 0

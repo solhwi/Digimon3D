@@ -7,11 +7,11 @@ using UnityEngine;
 
 public abstract class ActiveObject : CollisionObject
 {
-    public CharacterState CurrState
+    public ObjectState CurrState
     {
         get;
         private set;
-    } = CharacterState.Idle;
+    } = ObjectState.Idle;
 
     private Animator animator;
 
@@ -27,62 +27,34 @@ public abstract class ActiveObject : CollisionObject
     {
         base.Init(isMoving);
 
-        var job = AttributeUtil.GetCharacterJob(this.GetType());
-
+        var job = AttributeUtil.GetDigimonType(this.GetType());
         InitAnimator(job);
     }
 
-    private void InitAnimator(ENUM_CHARACTER job)
+    private void InitAnimator(ENUM_DIGIMON_TYPE job)
     {
         animator = gameObject.GetOrAddComponent<Animator>();
 
         // animator.runtimeAnimatorController = null;
-        animator.applyRootMotion = false;
-        animator.updateMode = AnimatorUpdateMode.Normal;
-        animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+        // animator.applyRootMotion = false;
+        // animator.updateMode = AnimatorUpdateMode.Normal;
+        // animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
     }
 
-    public virtual void Idle(CharacterParam param = null)
+    public virtual void Idle(StateParam param = null)
     {
-        animator.SetBool("isMoving", false);
-
         if (!IsLoadCompleted) return;
     }
 
-    public virtual void Move(CharacterParam param)
+    public virtual void Move(StateParam param)
     {
         if (!IsLoadCompleted ||
             param == null) return;
-
-        var moveParam = param as CharacterMoveParam;
-
-        if (moveParam != null)
-        {
-            float run = 1.0f;
-
-            if (moveParam.isRun)
-                run = 2.0f;
-
-            animator.SetBool("isRunning", moveParam.isRun);
-            animator.SetFloat("InputDirX", moveParam.inputVec.x * run);
-            animator.SetFloat("InputDirZ", moveParam.inputVec.z * run);
-            animator.SetBool("isMoving", moveParam.inputVec != Vector3.zero);
-        }
     }
 
-    public virtual void Attack(CharacterParam param = null)
+    public virtual void Attack(StateParam param = null)
     {
-        if (!IsLoadCompleted) return;
-
-        var attackParam = param as CharacterAttackParam;
-
-        if (attackParam != null)
-        {
-            animator.SetFloat("AttackPosX", attackParam.targetPos.x);
-            animator.SetFloat("AttackPosY", attackParam.targetPos.y);
-            animator.SetFloat("AttackPosZ", attackParam.targetPos.z);
-
-            animator.SetTrigger("AttackTrigger");
-        }
+        if (!IsLoadCompleted ||
+            param == null) return;
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public partial class CharacterController : SingletonBehaviour<CharacterController>
 {
-    protected Character character;
+    protected Digimon character;
     protected CameraController camController;
 
     protected override void OnInit()

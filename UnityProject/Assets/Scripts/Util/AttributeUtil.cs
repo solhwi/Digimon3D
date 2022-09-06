@@ -42,7 +42,7 @@ public static class AttributeUtil
         return string.Empty;
     }
 
-    public static ENUM_CHARACTER GetCharacterJob<T>() where T : Character
+    public static ENUM_DIGIMON_TYPE GetCharacterJob<T>() where T : Digimon
     {
         Type type = typeof(T);
 
@@ -50,7 +50,7 @@ public static class AttributeUtil
 
         foreach (Attribute attr in attributes)
         {
-            CharacterAttribute characterAttr = attr as CharacterAttribute;
+            DigimonAttribute characterAttr = attr as DigimonAttribute;
 
             if (characterAttr != null)
             {
@@ -58,16 +58,16 @@ public static class AttributeUtil
             }
         }
 
-        return ENUM_CHARACTER.None;
+        return ENUM_DIGIMON_TYPE.None;
     }
 
-    public static ENUM_CHARACTER GetCharacterJob(Type type)
+    public static ENUM_DIGIMON_TYPE GetDigimonType(Type type)
     {
         Attribute[] attributes = Attribute.GetCustomAttributes(type);
 
         foreach (Attribute attr in attributes)
         {
-            CharacterAttribute characterAttr = attr as CharacterAttribute;
+            DigimonAttribute characterAttr = attr as DigimonAttribute;
 
             if (characterAttr != null)
             {
@@ -75,7 +75,7 @@ public static class AttributeUtil
             }
         }
 
-        return ENUM_CHARACTER.None;
+        return ENUM_DIGIMON_TYPE.None;
     }
 
 }

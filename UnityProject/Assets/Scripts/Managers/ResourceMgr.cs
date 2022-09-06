@@ -76,7 +76,17 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
     }
 #endif
 
-    public AsyncOperationHandle<GameObject> Instantiate<T>(Action<T> PushObj = null) where T : MonoBehaviour
+    public AsyncOperationHandle<GameObject> Instantiate<T>(Vector3 pos, Quaternion rot) where T : MonoBehaviour
+    {
+        string path = AttributeUtil.GetResourcePath<T>();
+
+        if (path == null)
+            return new AsyncOperationHandle<GameObject>();
+
+        return Instantiate<T>(path, pos, rot);
+    }
+
+    public AsyncOperationHandle<GameObject> Instantiate<T>(Action<T> PushObj) where T : MonoBehaviour
     {
         string path = AttributeUtil.GetResourcePath<T>();
 
@@ -86,7 +96,7 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
         return Instantiate<T>(path, null, PushObj);
     }
 
-    public AsyncOperationHandle<GameObject> Instantiate<T>(Action OnCompleted = null, Action<T> PushObj = null) where T : MonoBehaviour
+    public AsyncOperationHandle<GameObject> Instantiate<T>(Action OnCompleted, Action<T> PushObj) where T : MonoBehaviour
     {
         string path = AttributeUtil.GetResourcePath<T>();
 
@@ -96,7 +106,25 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
         return Instantiate<T>(path, OnCompleted, PushObj);
     }
 
-    private AsyncOperationHandle<GameObject> Instantiate<T>(string path, Action OnCompleted = null, Action<T> ResultCallBack = null) where T : MonoBehaviour
+    private AsyncOperationHandle<GameObject> Instantiate<T>(string path, Action OnCompleted, Action<T> ResultCallBack) where T : MonoBehaviour
+    {
+        var async = Addressables.InstantiateAsync(path);
+
+        async.Completed += (op) =>
+        {
+            if (op.IsDone && op.Status == AsyncOperationStatus.Succeeded)
+            {
+                T monoObj = op.Result.GetComponent<T>();
+
+                ResultCallBack?.Invoke(monoObj);
+                OnCompleted?.Invoke();
+            }
+        };
+
+        return async;
+    }
+
+    private AsyncOperationHandle<GameObject> Instantiate<T>(string path, Vector3 pos, Quaternion rot, Action OnCompleted = null, Action<T> ResultCallBack = null) where T : MonoBehaviour
     {
         var async = Addressables.InstantiateAsync(path);
 
@@ -120,6 +148,24 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
             return new AsyncOperationHandle<GameObject>();
 
         var async = gameObject.InstantiateAsync(parent);
+
+        async.Completed += (op) =>
+        {
+            if (op.IsDone && op.Status == AsyncOperationStatus.Succeeded)
+            {
+                OnCompleted?.Invoke(op.Result);
+            }
+        };
+
+        return async;
+    }
+
+    public AsyncOperationHandle<GameObject> Instantiate(AssetReferenceGameObject gameObject, Vector3 pos, Quaternion rot, Action<GameObject> OnCompleted = null)
+    {
+        if (gameObject == null)
+            return new AsyncOperationHandle<GameObject>();
+
+        var async = gameObject.InstantiateAsync(pos, rot);
 
         async.Completed += (op) =>
         {
