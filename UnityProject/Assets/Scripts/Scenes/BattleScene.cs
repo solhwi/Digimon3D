@@ -10,7 +10,7 @@ namespace Solhwi
     {
         public override void Initialize()
         {
-            MapMgr.Instance.LoadMap(ENUM_MAP_TYPE.FileIsland, null, SpawnProcess);
+            MapMgr.Instance.LoadMap(ENUM_MAP_TYPE.FileIsland, null, PlayerSpawnProcess);
         }
 
         protected override IEnumerator Start()
@@ -24,9 +24,12 @@ namespace Solhwi
 
         }
 
-        private void SpawnProcess(Vector3 pos, Quaternion rot)
+        private void PlayerSpawnProcess(MapPlayerSpawnArea playerSpawnArea)
 		{
-            SpawnData data = new SpawnData(ENUM_DIGIMON_TYPE.Agumon, pos, rot);
+            Vector3 playerSpawnPos = playerSpawnArea.GetSpawnPos();
+            Quaternion playerSpawnRotation = playerSpawnArea.GetSpawnRotation();
+
+            SpawnData data = new SpawnData(ENUM_DIGIMON_TYPE.Agumon, playerSpawnPos, playerSpawnRotation);
             SpawnMgr.Instance.Spawn(data);
 		}
     }
