@@ -30,49 +30,38 @@ public class CameraController : MonoBehaviour
         set { CamArmTr.rotation = Quaternion.Euler(value); }
     }
 
-    public Quaternion CamArmRotation
-    {
-        get
-        {
-            return CamArmTr.rotation;
-        }
-        set
-        {
-            CamArmTr.rotation = value;
-        }
-    }
-
-    public Vector3 CamRayVec
-    {
-        get { return FireRay(); }
-    }
-
     public Transform target;
 
     public void Init(Transform parent, Transform target)
     {
         transform.SetParent(parent);
+        this.target = target;
 
+        InitantiateCamera();
+        SetViewCamera();
+    }
+
+    private void InitantiateCamera()
+	{
         // Camera Arm
         GameObject g = new GameObject("Camera Arm");
 
         CamArmTr = g.transform;
         CamArmTr.SetParent(transform);
 
-        // Camera        g = new GameObject("Camera");
+        // Camera
+        g = new GameObject("Camera");
         cam = g.AddComponent<Camera>();
 
         CamTr = cam.transform;
         CamTr.SetParent(CamArmTr);
+    }
 
-        // Target
-        this.target = target;
+    private void SetViewCamera()
+	{
+        CamArmTr.localPosition = new Vector3(0, 40, 15);
+        CamArmTr.Rotate(new Vector3(60, 180, 0));
 
-        Vector3 lookingPos = new Vector3(0, 1.5f, 0);
-        Vector3 cameraPos = new Vector3(0, 1.1f, -6.6f);
-
-        CamArmTr.localPosition = lookingPos;
-        CamTr.localPosition = target.transform.position + cameraPos;
     }
 
     protected virtual void LateUpdate()

@@ -8,9 +8,9 @@ namespace Solhwi
 {
     public class BattleScene : GameSceneBase
     {
-        protected override void OnEnable()
+        public override void Initialize()
         {
-            MapMgr.Instance.LoadMap(ENUM_MAP_TYPE.FileIsland);
+            MapMgr.Instance.LoadMap(ENUM_MAP_TYPE.FileIsland, null, SpawnProcess);
         }
 
         protected override IEnumerator Start()
@@ -19,9 +19,16 @@ namespace Solhwi
                 yield return null;
         }
 
-        protected override void OnDisable()
+        public override void Free()
         {
+
         }
+
+        private void SpawnProcess(Vector3 pos, Quaternion rot)
+		{
+            SpawnData data = new SpawnData(ENUM_DIGIMON_TYPE.Agumon, pos, rot);
+            SpawnMgr.Instance.Spawn(data);
+		}
     }
 
 

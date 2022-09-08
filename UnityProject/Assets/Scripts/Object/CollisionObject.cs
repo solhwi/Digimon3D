@@ -14,7 +14,7 @@ public class CollisionObject : MonoBehaviour
     public ENUM_LAYER_TYPE LayerType
     {
         get { return layerType; }
-        protected set
+        set
         {
             layerType = value;
             SDPhysics.SetLayer(this, layerType);
@@ -32,14 +32,6 @@ public class CollisionObject : MonoBehaviour
         protected set;
     }
 
-    public Quaternion Rotation
-    {
-        get
-        {
-            return Tr.rotation;
-        }
-    }
-
     protected Rigidbody rigid;
     protected Collider col;
 
@@ -52,7 +44,7 @@ public class CollisionObject : MonoBehaviour
         Tr.localScale = scale;
     }
 
-    public virtual void Init(bool isMoving)
+    public virtual void Init()
     {
         Tr = transform;
         col = GetCollider();
@@ -96,11 +88,6 @@ public class CollisionObject : MonoBehaviour
 
         return col;
     }
-
-    public void ReplaceObject(Vector3 pos)
-	{
-
-	}
 
     protected virtual void OnCollisionEnter(Collision collision)
     {

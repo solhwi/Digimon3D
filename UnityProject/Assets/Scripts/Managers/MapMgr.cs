@@ -22,9 +22,21 @@ public class MapMgr : SingletonBehaviour<MapMgr>
 
 	private bool isMapLoaded = false;
 
-	public void LoadMap(ENUM_MAP_TYPE mapType)
+	public void LoadMap(ENUM_MAP_TYPE mapType, Action OnLoadMap, Action<Vector3, Quaternion> OnLoadMapForSpawn)
 	{
-		ResourceMgr.Instance.LoadMap(mapType, SetMapRoot);
+		ResourceMgr.Instance.LoadMap(mapType, () => 
+		{
+			SetMapRoot();
+			isMapLoaded = true;
+
+			OnLoadMap?.Invoke();
+
+			MapPlayerSpawnArea playerSpawnArea = currMapRoot.GetMapComponent<MapPlayerSpawnArea>();
+			Vector3 playerSpawnPos = playerSpawnArea.GetSpawnPos();
+			Quaternion playerSpawnRotation = playerSpawnArea.GetSpawnRotation();
+
+			OnLoadMapForSpawn?.Invoke(playerSpawnPos, playerSpawnRotation);
+		});
 	}
 
 	private void SetMapRoot()
@@ -35,16 +47,5 @@ public class MapMgr : SingletonBehaviour<MapMgr>
 
 		currMapRoot.transform.SetParent(transform, true);
 		currMapRoot.Init();
-
-		MapPlayerSpawnArea playerSpawnArea = currMapRoot.GetMapComponent<MapPlayerSpawnArea>();
-		Vector3 playerSpawnPos = playerSpawnArea.GetSpawnPos();
-
-		var data = new SpawnData()
-		{
-			digimonType = SDDefine.ENUM_DIGIMON_TYPE.Agumon,
-			spawnPos = playerSpawnPos
-		};
-
-		SpawnMgr.Instance.Spawn(data);
 	}
 }

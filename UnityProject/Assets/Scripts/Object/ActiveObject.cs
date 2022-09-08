@@ -23,9 +23,9 @@ public abstract class ActiveObject : CollisionObject
         }
     }
 
-    public override void Init(bool isMoving)
+    public override void Init()
     {
-        base.Init(isMoving);
+        base.Init();
 
         var job = AttributeUtil.GetDigimonType(this.GetType());
         InitAnimator(job);

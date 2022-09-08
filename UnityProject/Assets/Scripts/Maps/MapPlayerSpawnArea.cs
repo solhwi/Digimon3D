@@ -9,6 +9,11 @@ public class MapSpawnArea : MapComponent
 	{
 		return transform.position;
 	}
+
+	public Quaternion GetSpawnRotation()
+	{
+		return transform.rotation;
+	}
 }
 
 public class MapPlayerSpawnArea : MapSpawnArea

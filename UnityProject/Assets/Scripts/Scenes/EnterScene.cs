@@ -17,7 +17,7 @@ namespace Solhwi
             }
         }
 
-        protected override void OnEnable()
+        public override void Initialize()
         {
             singletonDictionary = new SingletonDictionary()
             {

@@ -76,37 +76,27 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
     }
 #endif
 
-    public AsyncOperationHandle<GameObject> Instantiate<T>(Vector3 pos, Quaternion rot) where T : MonoBehaviour
+    public AsyncOperationHandle<GameObject> Instantiate<T>(Vector3 pos, Quaternion quaternion, bool isAttachComponent = true, Action < T> PushObj = null) where T : MonoBehaviour
     {
         string path = AttributeUtil.GetResourcePath<T>();
 
         if (path == null)
             return new AsyncOperationHandle<GameObject>();
 
-        return Instantiate<T>(path, pos, rot);
+        return Instantiate(path, pos, quaternion, isAttachComponent, null, PushObj);
     }
 
-    public AsyncOperationHandle<GameObject> Instantiate<T>(Action<T> PushObj) where T : MonoBehaviour
+    public AsyncOperationHandle<GameObject> Instantiate<T>(Action<T> PushObj = null, bool isAttachComponent = true) where T : MonoBehaviour
     {
         string path = AttributeUtil.GetResourcePath<T>();
 
         if (path == null)
             return new AsyncOperationHandle<GameObject>();
 
-        return Instantiate<T>(path, null, PushObj);
+        return Instantiate(path, isAttachComponent, null, PushObj);
     }
 
-    public AsyncOperationHandle<GameObject> Instantiate<T>(Action OnCompleted, Action<T> PushObj) where T : MonoBehaviour
-    {
-        string path = AttributeUtil.GetResourcePath<T>();
-
-        if (path == null) 
-            return new AsyncOperationHandle<GameObject>();
-
-        return Instantiate<T>(path, OnCompleted, PushObj);
-    }
-
-    private AsyncOperationHandle<GameObject> Instantiate<T>(string path, Action OnCompleted, Action<T> ResultCallBack) where T : MonoBehaviour
+    private AsyncOperationHandle<GameObject> Instantiate<T>(string path, bool isAttachComponent, Action OnCompleted, Action<T> ResultCallBack) where T : MonoBehaviour
     {
         var async = Addressables.InstantiateAsync(path);
 
@@ -114,7 +104,16 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
         {
             if (op.IsDone && op.Status == AsyncOperationStatus.Succeeded)
             {
-                T monoObj = op.Result.GetComponent<T>();
+                T monoObj = null;
+
+                if (isAttachComponent)
+                {
+                    monoObj = op.Result.GetOrAddComponent<T>();
+                }
+                else
+				{
+                    monoObj = op.Result.GetComponent<T>();
+                }
 
                 ResultCallBack?.Invoke(monoObj);
                 OnCompleted?.Invoke();
@@ -124,54 +123,27 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
         return async;
     }
 
-    private AsyncOperationHandle<GameObject> Instantiate<T>(string path, Vector3 pos, Quaternion rot, Action OnCompleted = null, Action<T> ResultCallBack = null) where T : MonoBehaviour
+    private AsyncOperationHandle<GameObject> Instantiate<T>(string path, Vector3 pos, Quaternion quaternion, bool isAttachComponent, Action OnCompleted = null, Action<T> ResultCallBack = null) where T : MonoBehaviour
     {
-        var async = Addressables.InstantiateAsync(path);
+        var async = Addressables.InstantiateAsync(path, pos, quaternion);
 
         async.Completed += (op) =>
         {
             if (op.IsDone && op.Status == AsyncOperationStatus.Succeeded)
             {
-                T monoObj = op.Result.GetComponent<T>();
+                T monoObj = null;
+
+                if (isAttachComponent)
+				{
+                    monoObj = op.Result.GetOrAddComponent<T>();
+                }
+                else
+                {
+                    monoObj = op.Result.GetComponent<T>();
+                }
 
                 ResultCallBack?.Invoke(monoObj);
                 OnCompleted?.Invoke();
-            }
-        };
-
-        return async;
-    }
-
-    public AsyncOperationHandle<GameObject> Instantiate(AssetReferenceGameObject gameObject, Transform parent, Action<GameObject> OnCompleted = null)
-    {
-        if (gameObject == null)
-            return new AsyncOperationHandle<GameObject>();
-
-        var async = gameObject.InstantiateAsync(parent);
-
-        async.Completed += (op) =>
-        {
-            if (op.IsDone && op.Status == AsyncOperationStatus.Succeeded)
-            {
-                OnCompleted?.Invoke(op.Result);
-            }
-        };
-
-        return async;
-    }
-
-    public AsyncOperationHandle<GameObject> Instantiate(AssetReferenceGameObject gameObject, Vector3 pos, Quaternion rot, Action<GameObject> OnCompleted = null)
-    {
-        if (gameObject == null)
-            return new AsyncOperationHandle<GameObject>();
-
-        var async = gameObject.InstantiateAsync(pos, rot);
-
-        async.Completed += (op) =>
-        {
-            if (op.IsDone && op.Status == AsyncOperationStatus.Succeeded)
-            {
-                OnCompleted?.Invoke(op.Result);
             }
         };
 
@@ -190,10 +162,10 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
     public void LoadMap(ENUM_MAP_TYPE mapType, Action OnLoaded = null)
     {
         string mapPath = $"Assets/Bundles/Scenes/Stage/{mapType}.unity";
-        StartCoroutine(CoLoadMap(mapPath, OnLoaded));
+        StartCoroutine(Co_LoadMap(mapPath, OnLoaded));
     }
     
-    private IEnumerator CoLoadMap(string mapPath, Action OnLoaded)
+    private IEnumerator Co_LoadMap(string mapPath, Action OnLoaded)
     {
         if (mapPath == null ||
             mapPath == string.Empty)
@@ -207,16 +179,6 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
         Addressables.UnloadSceneAsync(async);
     }
 
-    public AsyncOperationHandle<T> LoadByAttribute<T>(Action OnLoaded = null, Action<T> PushObj = null) where T : UnityEngine.Object
-    {
-        string path = AttributeUtil.GetResourcePath<T>();
-
-        if (path == null) 
-            return new AsyncOperationHandle<T>() { };
-
-        return Load<T>(path, OnLoaded, PushObj);
-    }
-
     public AsyncOperationHandle<T> LoadByType<T>(Type type, Action OnLoaded = null, Action<T> PushObj = null) where T : UnityEngine.Object
     {
         string path = AttributeUtil.GetResourcePath(type);
@@ -227,18 +189,44 @@ public class ResourceMgr : SingletonBehaviour<ResourceMgr>
         return Load<T>(path, OnLoaded, PushObj);
     }
 
-    public AsyncOperationHandle<T> LoadByPath<T>(string path, Action OnLoaded = null, Action<T> PushObj = null) where T : UnityEngine.Object
+    public AsyncOperationHandle LoadByType(Type type, Action OnLoaded = null, Action<GameObject> PushObj = null)
+    {
+        string path = AttributeUtil.GetResourcePath(type);
+
+        if (path == null)
+            return new AsyncOperationHandle() { };
+
+        return Load(path, OnLoaded, PushObj);
+    }
+
+    public AsyncOperationHandle LoadByPath(string path, Action OnLoaded = null, Action<GameObject> PushObj = null)
     {
         if (path == null ||
             path == string.Empty) 
-            return new AsyncOperationHandle<T>() { };
+            return new AsyncOperationHandle() { };
 
-        return Load<T>(path, OnLoaded, PushObj);
+        return Load(path, OnLoaded, PushObj);
     }
 
     private AsyncOperationHandle<T> Load<T>(string path, Action OnCompleted = null, Action<T> ResultCallBack = null) where T : UnityEngine.Object
     {
         var async = Addressables.LoadAssetAsync<T>(path);
+
+        async.Completed += (op) =>
+        {
+            if (op.IsDone && op.Status == AsyncOperationStatus.Succeeded)
+            {
+                OnCompleted?.Invoke();
+                ResultCallBack?.Invoke(op.Result);
+            }
+        };
+
+        return async;
+    }
+
+    private AsyncOperationHandle Load(string path, Action OnCompleted = null, Action<GameObject> ResultCallBack = null)
+    {
+        var async = Addressables.LoadAssetAsync<GameObject>(path);
 
         async.Completed += (op) =>
         {

@@ -18,14 +18,14 @@ public partial class CharacterController : PlayerInputAction.IKeyBoardActions, P
         }
         else
         {
-            if (character.CurrState != ObjectState.Idle)
+            if (controllerTarget.CurrState != ObjectState.Idle)
                 PlayerCommand(ObjectState.Idle);
         }
     }
 
     private void PlayerCommand(ObjectState nextState, StateParam param = null)
     {
-        if (character == null)
+        if (controllerTarget == null)
             return;
 
         switch (nextState)
@@ -33,20 +33,20 @@ public partial class CharacterController : PlayerInputAction.IKeyBoardActions, P
             case ObjectState.Idle:
                 playerCommandQueue.Enqueue(() =>
                 {
-                    character.Idle();
+                    controllerTarget.Idle();
                 });
                 break;
             case ObjectState.Move:
                 playerCommandQueue.Enqueue(() =>
                 {
-                    character.Move(param);
+                    controllerTarget.Move(param);
                 });
                 break;
 
             case ObjectState.Attack:
                 playerCommandQueue.Enqueue(() =>
                 {
-                    character.Attack(param);
+                    controllerTarget.Attack(param);
                 });
                 break;
         }

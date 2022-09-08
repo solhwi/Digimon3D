@@ -22,16 +22,6 @@ public class DigimonAttribute : ResourceAttribute
 
 public class Digimon : ActiveObject
 {
-    protected int index = -1;
 
-    public void Spawn(Vector3 pos)
-	{
-        ReplaceObject(pos);
-    }
-
-    public virtual void Look(StateParam param = null)
-	{
-
-	}
 
 }
