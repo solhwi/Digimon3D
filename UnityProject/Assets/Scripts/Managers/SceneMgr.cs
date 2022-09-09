@@ -31,8 +31,6 @@ public class SceneMgr : SingletonBehaviour<SceneMgr>
     {
         string sceneName = Enum.GetName(typeof(GameScene), sceneEnum);
 
-        gameScene.Free();
-
         var asyncOperation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
 
         asyncOperation.allowSceneActivation = false;
