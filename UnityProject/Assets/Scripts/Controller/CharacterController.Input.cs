@@ -16,11 +16,6 @@ public partial class CharacterController : PlayerInputAction.IKeyBoardActions, P
         {
             playerCommandQueue.Dequeue()();
         }
-        else
-        {
-            if (controllerTarget.CurrState != ObjectState.Idle)
-                PlayerCommand(ObjectState.Idle);
-        }
     }
 
     private void PlayerCommand(ObjectState nextState, StateParam param = null)
@@ -110,7 +105,12 @@ public partial class CharacterController : PlayerInputAction.IKeyBoardActions, P
 
 	public void OnMouseLeft(InputAction.CallbackContext context)
 	{
-	}
+        if(context.performed)
+		{
+            Vector3 targetPos = cameraController.FireRay();
+            PlayerCommand(ObjectState.Move, new MoveParam(targetPos));
+        }
+    }
 
 	public void OnMouseMiddle(InputAction.CallbackContext context)
 	{

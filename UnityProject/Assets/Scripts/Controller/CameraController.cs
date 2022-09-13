@@ -74,12 +74,12 @@ public class CameraController : MonoBehaviour
         transform.position = target.position;
     }
 
-    private Vector3 FireRay()
+    public Vector3 FireRay()
     {
         Ray ray = ScreenPointToRay(InputMgr.MouseScreenPos);
         RaycastHit hit;
 
-        if (SDPhysics.RaycastWithoutLayerType(CamPos, ray.direction * 30f, out hit, 30.0f, ENUM_LAYER_TYPE.Player))
+        if (SDPhysics.RaycastWithoutLayerType(CamPos, ray.direction * 30f, out hit, Mathf.Infinity, ENUM_LAYER_TYPE.Player))
             return hit.point;
 
         return ray.direction;

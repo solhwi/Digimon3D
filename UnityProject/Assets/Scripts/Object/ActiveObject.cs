@@ -13,13 +13,19 @@ public abstract class ActiveObject : CollisionObject
         private set;
     } = ObjectState.Idle;
 
-    private Animator animator;
+    private Animator animator = null;
+
+    private Coroutine activeCoroutine = null;
+    private Vector3 goalPosition = default;
+
+    private float moveSpeed = 2.0f;
 
     public bool IsLoadCompleted
     {
         get
         {
-            return animator != null;
+            // return animator != null && animator.runtimeAnimatorController != null;
+            return true;
         }
     }
 
@@ -27,11 +33,13 @@ public abstract class ActiveObject : CollisionObject
     {
         base.Init();
 
-        var job = AttributeUtil.GetDigimonType(this.GetType());
-        InitAnimator(job);
+        var type = AttributeUtil.GetDigimonType(this.GetType());
+        InitAnimator(type);
+
+        activeCoroutine = StartCoroutine(Co_Active());
     }
 
-    private void InitAnimator(ENUM_DIGIMON_TYPE job)
+    private void InitAnimator(ENUM_DIGIMON_TYPE type)
     {
         animator = gameObject.GetOrAddComponent<Animator>();
 
@@ -41,15 +49,46 @@ public abstract class ActiveObject : CollisionObject
         // animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
     }
 
+    private IEnumerator Co_Active()
+	{
+        while(true)
+		{
+            if (!IsLoadCompleted)
+                yield return null;
+
+            if (CurrentPosition == goalPosition)
+            {
+                if (CurrState != ObjectState.Idle)
+                {
+                    Idle();
+                }
+            }
+            else
+			{
+                Move(new MoveParam(goalPosition));
+            }
+
+            yield return null;
+        }
+	}
+
     public virtual void Idle(StateParam param = null)
     {
         if (!IsLoadCompleted) return;
     }
 
-    public virtual void Move(StateParam param)
+    public virtual void Move(StateParam _param)
     {
         if (!IsLoadCompleted ||
-            param == null) return;
+            _param == null ||
+            _param is not MoveParam) return;
+
+        var param = _param as MoveParam;
+
+        goalPosition = param.targetPos;
+
+        Vector3 normal = (goalPosition - CurrentPosition).normalized;
+        rigid.velocity = moveSpeed * normal;
     }
 
     public virtual void Attack(StateParam param = null)

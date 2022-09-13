@@ -13,7 +13,7 @@ public static class SDPhysics
 
     public static int GetLayerMaskWithoutLayerType(ENUM_LAYER_TYPE layerType)
     {
-        return (-1) - (1 << (int)layerType);
+        return ~(1 << (int)layerType);
     }
 
     public static int GetLayerMask(ENUM_LAYER_TYPE[] layerTypes)
@@ -33,7 +33,7 @@ public static class SDPhysics
     private static void DrawRay(Vector3 origin, Vector3 dir, Color color)
     {
 #if UNITY_EDITOR
-        Debug.DrawRay(origin, dir, color, 0.5f);
+        Debug.DrawRay(origin, dir, color, 1.5f);
 #endif
     }
 
@@ -44,6 +44,17 @@ public static class SDPhysics
 
         int layerMask = GetLayerMaskWithoutLayerType(layerType);
         bool layerCheck = Physics.Raycast(ray, out hit, maxDistance, layerMask);
+
+        return layerCheck;
+    }
+
+    public static bool Raycast(Vector3 origin, Vector3 direction, out RaycastHit hit, float maxDistance, ENUM_LAYER_TYPE layerType, bool isDrawRay = true)
+    {
+        if (isDrawRay)
+            DrawRay(origin, direction * maxDistance, Color.green);
+
+        int layerMask = GetLayerMask(layerType);
+        bool layerCheck = Physics.Raycast(origin, direction, out hit, maxDistance, layerMask);
 
         return layerCheck;
     }

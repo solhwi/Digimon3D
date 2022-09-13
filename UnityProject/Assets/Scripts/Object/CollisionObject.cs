@@ -32,6 +32,14 @@ public class CollisionObject : MonoBehaviour
         protected set;
     }
 
+    public Vector3 CurrentPosition
+	{
+		get
+		{
+            return Tr.position;
+		}
+	}
+
     protected Rigidbody rigid;
     protected Collider col;
 

@@ -11,7 +11,12 @@ public class StateParam { }
 
 public class MoveParam : StateParam
 {
+	public Vector3 targetPos = default;
 
+	public MoveParam(Vector3 targetPos)
+	{
+		this.targetPos = targetPos;
+	}
 }
 
 public class RotateParam : StateParam
